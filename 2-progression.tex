@@ -1,0 +1,168 @@
+
+
+
+
+
+\documentclass[12pt]{article}
+\usepackage{color}
+
+\title{Modelling the Transition to a Low-Carbon Energy Supply}
+\author{Alexander Kell}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\clearpage
+
+\section{Background and Research Question}
+
+\subsection{Background and research question}
+\begin{itemize}
+  \item Introduction to problem of climate change and requirement for decarbonization.
+  \item Requirement of shift in heating, transport, and industry to electricity.
+  \item Inability to use traditional machine learning and statistical tools to project into future due to rapid disruption.
+  \item Use of long-term agent-based model to simulate into the future (eg. 2050) allowing policy makers and energy market players to assess effect of decisions made.
+  \item Agent-based models can be used to model the impact of heterogenous investors
+  \item Enable policy makers to assess the impact of market power and collusion
+  \item Ability to use reinforcement learning to give agents intelligence
+\end{itemize}
+
+\subsection{Literature Review}
+
+\begin{itemize}
+  \item  Literature review on state-of-the-art models and applications
+  \item Agent-based model tools
+  \begin{enumerate}
+  	\item Absence of open-source tool with stochasticity (table).
+  \end{enumerate}
+
+  \item Optimisation tools
+\end{itemize}
+
+
+\subsection{Work Completed}
+
+\begin{itemize}
+  \item Short-term load forecasting
+  \item Completion of agent-based model at yearly granularity
+  \item Results of yearly granularity of agent-based model
+  \item Use of Northern Ireland scenario for optimisation of carbon tax using reinforcement learning (preliminary results)
+\end{itemize}
+
+
+
+
+
+\clearpage
+
+\section{Remaining Work}
+\begin{enumerate}
+  \item Increase granularity to hourly.
+  \begin{enumerate}
+  \item Selection of best representative days for long-term - Comparison to literature that selects best day for single year.
+  \end{enumerate}
+  \item  Parametrise model using genetic algorithm or other optimisation tool.
+
+  \item Add intelligence to agents using reinforcement learning for:
+  \begin{enumerate}
+      \item Investment decisions.
+      \item Bidding strategy.
+      \item Impact of collusion (variable sharing between two or more agents).
+  \end{enumerate}
+  \item Comparison of optimisation and agent-based model in different scenarios.
+  \begin{enumerate}
+  \item Same intialisation parameters and project to future (form of cross-validation).
+  \item Collusion.
+  \end{enumerate}
+  \item Further scenarios and results as examples
+  \begin{enumerate}
+  \item Decreasing costs of technology over time
+  \item Different countries
+  \item Improving availability and capacity factors
+  \item Uncertainty in fuel prices
+  \item Changing demand curve shape due to increase in electric vehicles
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+
+\clearpage
+
+\section{Progress against First Year Plan}
+
+
+
+
+
+
+
+\clearpage
+
+\section{Remaining Work Plan}
+
+
+
+
+
+
+
+
+\clearpage
+
+\section{Thesis Outline}
+
+\subsection{Chapters}
+\begin{enumerate}
+
+  \item Introduction
+  \item Literature review
+  \item Data analytics of smart meter data
+  \begin{enumerate}
+	  \item Short-term 
+	  \item Long-term load forecasting (inadequacy of long-term load forecasting)
+	  \item Demand segmentation
+  \end{enumerate}
+  \item ElecSim: An open-sourced agent-based model
+    \begin{enumerate}
+	  \item Yearly granularity
+	  \item Hourly granularity
+  \end{enumerate}
+  \item Adding Intelligence to Agents
+  \begin{enumerate}
+	  \item Reinforcement learning techniques for agents
+	  \item Collusion
+  \end{enumerate}
+  \item Scenarios
+  \item Agent-based model and Optimisation tool: A comparison
+  \item Conclusion and future work
+  
+\end{enumerate}
+
+
+
+
+
+
+
+\clearpage
+
+\section{Research Outputs}
+
+
+\begin{itemize}
+	\item Note-paper at e-Energy '18
+	\item Poster at e-Energy '19
+	\item Paper at 2nd International Workshop on Electricity Market Engineering at e-Energy '19?
+\end{itemize}
+
+
+
+
+\clearpage
+
+\end{document}
