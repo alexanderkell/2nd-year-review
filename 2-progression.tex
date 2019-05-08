@@ -5,6 +5,19 @@
 
 \documentclass[12pt]{article}
 \usepackage{color}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{csvsimple}
+\usepackage{mhchem}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{array}
 
 \title{Modelling the Transition to a Low-Carbon Energy Supply}
 \author{Alexander Kell}
@@ -19,7 +32,64 @@
 
 \section{Background and Research Question}
 
-\subsection{Background and research question}
+%\subsection{Background and research question}
+
+
+Due to the threat of climate change, a transition from a fossil-fuel based system to one based on zero-carbon is required. However, this is not as simple as shutting down all fossil-fuel based power plants and replacing them with renewable energy; careful decisions need to be made to reduce economic impact and lapses in electricity supply. Decision makers therefore need a way of assessing the consequences of decisions in different possible scenarios. 
+
+Due to a deliberate move away from centralised planning, and to the liberalisation of electricity markets in many western democracies, heterogenous actors with bounded rationality and imperfect information should be focused on to increase understanding \cite{Kraan2018}.
+
+I propose a method of modelling these heterogenous actors in electricity markets and explore potential pathways to transition to a low-carbon economy. For this goal, I have created a new open-source agent-based model named ElecSim. ElecSim is a stochastic electricity market simulation tool which enables practitioners to alter scenarios and assess the outcomes of possible interventions in an electricity market.
+
+I propose the use of artificial intelligence and optimisation techniques to gain a more realistic representation of an electricity market, and better aid policy makers and electricity market players. Specifically, this will involve the use of reinforcement learning techniques such as Deep Deterministic Policy Gradients (DDPGs)\cite{Hunt2016}, or Deep Q Networks \cite{Mnih2013}. These algorithms will be used to learn optimal bidding and investment strategies.
+
+
+\subsection{Literature Review}
+
+Live experimentation of an electricity market is not practical. The time scales are long and there is a significant risk that changes can have detrimental impacts. This can often lead to minor tweaks being made \cite{Forshaw2016}. A solution to this is simulation, where simulation is the substitution of a physical process with a computer model.
+
+A number of different simulations and computer models have been used to aid policy makers and energy market developers in  coming to informed conclusions. Energy models can typically be classified as top-down macro-economic models or bottom-up techno-economic models \cite{Bohringer1998}. To explicitly model types of technology such as the intermittency of renewables we have focused on bottom-up techno-economic models.
+
+It is possible to further categorise bottom-up models into optimisation and simulation models. Optimisation energy models minimise costs or maximise welfare, defined as the material and physical well-being of people, from the perspective of a central planner ~\cite{Keles2017}. Examples of optimisation models are MARKAL/TIMES~\cite{Fishbone1981} and MESSAGE~\cite{Schrattenholzer1981}. 
+
+However, electricity market liberalisation in many western democracies has changed the framework conditions. Centralised, monopolistic, decision making entities have given way to multiple heterogeneous agents acting for their own best interest~\cite{Most2010}. Policy options must therefore be used to encourage changes to attain a desired outcome. It is proposed that these complex agents are modelled using ABMs due to their non-deterministic nature. 
+
+
+
+
+\begin{table}[]
+	%	\begin{tabular}{|l|c|c|c|c|c|}
+	\begin{tabular}{m{2.5cm}m{1.2cm}m{1.5cm}m{2cm}m{2cm}m{2cm}} \toprule
+		\multicolumn{1}{c}{\textbf{Tool name}} & \textbf{Open Source} & \textbf{Long-Term Investment} & \textbf{Market} & \textbf{Stochastic Inputs} & \textbf{Country Generalisability} \\ \midrule
+		SEPIA \cite{Harp2000}  & \checkmark           & $\times$                             & \checkmark      & Demand                     & \checkmark                        \\ 
+		EMCAS ~\cite{Conzelmann}   & $\times$                    & \checkmark                    & \checkmark      & Outages                    & \checkmark                        \\ 
+		NEMSIM ~\cite{Batten2006}  & ?              & \checkmark                    & \checkmark      & $\times$                          & $\times$                                 \\ 
+		AMES  ~\cite{Sun2007} & \checkmark           & $\times$                             & Day-ahead       & $\times$                          & $\times$                                 \\ 
+		GAPEX  ~\cite{Cincotti2013} & ?              & $\times$                             & Day-ahead       & $\times$                          & \checkmark                        \\ 
+		PowerACE \cite{Rothengatter2007} & $\times$                    & \checkmark                    & \checkmark      & Outages Demand             & \checkmark                        \\ 
+
+		EMLab ~\cite{Chappin2017}  & \checkmark           & \checkmark                    & Futures         & $\times$                          & \checkmark                        \\ 
+		MACSEM  ~\cite{Praca2003}  & ?              & $\times$                             & \checkmark      & $\times$                          & \checkmark                        \\ 
+		ElecSIM                                  & \checkmark           & \checkmark                    & Futures         & \checkmark                 & \checkmark                        \\ \hline
+	\end{tabular}
+	\caption{Features of electricity market ABM tools.}
+	\label{table:tool_comparison}
+
+\end{table}
+
+A number of dedicated tools have been created for this regard, however by referring to Table \ref{table:tool_comparison} it can be seen that these do not suit the needs of an open source, long-term market model.
+
+
+
+
+
+
+
+\subsection{Background and Research Question}
+
+
+
+
 \begin{itemize}
   \item Introduction to problem of climate change and requirement for decarbonization.
   \item Requirement of shift in heating, transport, and industry to electricity.
@@ -58,7 +128,33 @@
 
 \clearpage
 
+\clearpage
+
+\section{Research Outputs}
+
+
+\begin{itemize}
+	\item Note-paper at e-Energy '18
+	\item Poster at e-Energy '19
+	\item Paper at 2nd International Workshop on Electricity Market Engineering at e-Energy '19?
+\end{itemize}
+
+\clearpage
+
 \section{Remaining Work}
+
+Whilst the agent-based model, ElecSim, has been designed and parametrised, it has been designed to cater for a temporal granularity of a year. That is, decisions for bidding into an electricity market and investing in power plants happens every year. The goal is to increase the granularity temporally, which will enable the modelling of sudden fluctuations in wind speed and solar irradiance. Collins \textit{et al.} showed that a low temporal resolution results in overestimation of intermittent renewable energy technology, and underestimation in dispatchable energy sources \cite{Collins2017}.
+
+To further increase the validation accuracy of ElecSim, I propose the use of optimisation such as mixed integer linear programming and genetic programming to further parametrise the model. I propose the use of the NSGA-II algorithm, which enables multi-objective optimisation, and approximates the pareto frontier \cite{Valkanas2014}. I propose optimising for the electricity prices which are output from the model to match real data. 
+
+I propose the use of reinforcement learning techniques to control the behaviour of agents. For instance, controlling and optimising the behaviour of investment decisions and bidding strategies. I would also like to model collusion between agents through the means of parameter sharing between agents. This would allow us to see how important collusion is in the real world.
+
+Whilst I have completed preliminary work on optimising the carbon price using reinforcement learning techniques using DDPG, I would like to do this again with a higher granularity to improve results.
+
+I would like to run more simple scenarios using this model and change things such as cost of technologies, change in demand, uncertainty in fuel prices, different countries, and changing availability and capacity factors.
+
+Finally, I would like to compare my model to another open source model, OSeMOSYS \cite{Howells2011}. OSeMOSYS is an optimisation based model, and I would like to do a comparison of optimisation and agent-based models, and find which model is suited for different scenarios.
+
 \begin{enumerate}
   \item Increase granularity to hourly.
   \begin{enumerate}
@@ -151,20 +247,13 @@
 
 
 
-\clearpage
 
-\section{Research Outputs}
-
-
-\begin{itemize}
-	\item Note-paper at e-Energy '18
-	\item Poster at e-Energy '19
-	\item Paper at 2nd International Workshop on Electricity Market Engineering at e-Energy '19?
-\end{itemize}
 
 
 
 
 \clearpage
 
+\bibliography{library}
+\bibliographystyle{ieeetr}
 \end{document}
