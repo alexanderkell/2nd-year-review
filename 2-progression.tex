@@ -143,17 +143,17 @@ A number of dedicated tools have been created for this regard, however by referr
 
 \section{Remaining Work}
 
-Whilst the agent-based model, ElecSim, has been designed and parametrised, it has been designed to cater for a temporal granularity of a year. That is, decisions for bidding into an electricity market and investing in power plants happens every year. The goal is to increase the granularity temporally, which will enable the modelling of sudden fluctuations in wind speed and solar irradiance. Collins \textit{et al.} showed that a low temporal resolution results in overestimation of intermittent renewable energy technology, and underestimation in dispatchable energy sources \cite{Collins2017}.
+Whilst the agent-based model, ElecSim, has been designed and parametrised, it has been designed to cater for a temporal granularity of a yearly time-step. That is, decisions for bidding into an electricity market and investing in power plants happens every year. The goal is to increase the granularity temporally, which will enable the modelling of sudden fluctuations in wind speed and solar irradiance. Collins \textit{et al.} showed that a low temporal resolution results in overestimation of intermittent renewable energy technology, and underestimation in dispatchable energy sources \cite{Collins2017}.
 
-To further increase the validation accuracy of ElecSim, I propose the use of optimisation such as mixed integer linear programming and genetic programming to further parametrise the model. I propose the use of the NSGA-II algorithm, which enables multi-objective optimisation, and approximates the pareto frontier \cite{Valkanas2014}. I propose optimising for the electricity prices which are output from the model to match real data. 
+To further increase the validation accuracy of ElecSim, I propose the use of optimisation such as mixed integer linear programming and genetic programming to further parametrise the model. I propose the use of the NSGA-II algorithm, which enables multi-objective optimisation, and approximates the pareto frontier \cite{Valkanas2014}. I propose the minimisation of the difference between real and modelled electricity prices and real and modelled energy mix. Where the energy mix is defined as percentage share of different renewable types.
 
-I propose the use of reinforcement learning techniques to control the behaviour of agents. For instance, controlling and optimising the behaviour of investment decisions and bidding strategies. I would also like to model collusion between agents through the means of parameter sharing between agents. This would allow us to see how important collusion is in the real world.
+I propose the use of reinforcement learning techniques to control the behaviour of agents. For instance, controlling and optimising the behaviour of investment decisions and bidding strategies. I would also like to model collusion between agents through the means of parameter sharing between agents. This would enable the comparison between scenarios where collusion is present and those where it is not.
 
-Whilst I have completed preliminary work on optimising the carbon price using reinforcement learning techniques using DDPG, I would like to do this again with a higher granularity to improve results.
+Whilst I have completed preliminary work on optimising the carbon price using reinforcement learning techniques using DDPG, I would like to do improve this when I have designed a higher granularity model which may improve results.
 
-I would like to run more simple scenarios using this model and change things such as cost of technologies, change in demand, uncertainty in fuel prices, different countries, and changing availability and capacity factors.
+I propose the modelling of further scenarios using this model and change variables such as cost of technologies, change in demand, uncertainty in fuel prices, differing countries, and changing availability and capacity factors.
 
-Finally, I would like to compare my model to another open source model, OSeMOSYS \cite{Howells2011}. OSeMOSYS is an optimisation based model, and I would like to do a comparison of optimisation and agent-based models, and find which model is suited for different scenarios.
+Finally, I would like to compare my model to another open source model, OSeMOSYS \cite{Howells2011}. OSeMOSYS is an optimisation based model. I believe that a comparison between agent-based models and optimisation model will help to elucidate the strengths and weaknesses of these models in comparison to one another, and discover the scenarios in which the models are better suited. 
 
 \begin{enumerate}
   \item Increase granularity to hourly.
@@ -191,6 +191,27 @@ Finally, I would like to compare my model to another open source model, OSeMOSYS
 \clearpage
 
 \section{Progress against First Year Plan}
+
+\paragraph{Review}
+
+A literature review has been undertaken and a greater understanding of energy market models has been developed. With a distinction between top-down macroeconomic models and bottom-up techno-economic models shown. Also the differences between traditional centralised optimisation  models and new simulation techniques developed. I have developed a table which positions my research in relation to the literature.
+
+\paragraph{Design of System and Validation}
+
+The fundamental components of the system have been designed. A model of an electricity market with a yearly time-step has been completed with generation company and demand agents, with example scenarios. The model has been calibrated with data from the UK, however designed in such a way that other countries can be used. For instance, by providing an optimisation framework in which individual cost parameters can be estimated from a simple average cost of electricity.
+
+I am currently testing the design of a 30 minute time step. Representative days of weather and load have been selected to reduce overall computation time by testing different techniques such as k-means clustering, genetic programming and Fourier resampling. 
+
+The model has been validated through the comparison of actual electricity prices with modelled electricity prices. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa.
+
+I have researched the use of reinforcement learning to optimise carbon tax to reduce electricity price and carbon emissions. However, this has not provided the expected results of a rapid increase in reward. I am increasing the temporal granularity to aid in this, and further investigation is required.
+
+I am yet to implement agent intelligence through the use of reinforcement learning for bidding and investment strategies. However, I have identified the necessary algorithms for this.
+
+
+\paragraph{Scenario Testing}
+
+I have undertaken various scenario tests by increasing and decreasing electricity demand and varying carbon taxes to observe the behaviour.
 
 
 

@@ -1,0 +1,18 @@
+1st Year Work Plan
+
+- Survey paper
+- Electricity market
+
+Design of system:
+- Agent based model
+- Merit order implemented
+- Bilateral contracts
+- Artificial intelligence for bids (pay-as-bid)
+
+Documentation
+- Automatically generated
+
+Validation:
+- Change in x leads to change in y
+
+Scenario Testing
