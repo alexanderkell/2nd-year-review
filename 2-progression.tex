@@ -18,6 +18,7 @@
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{array}
+\usepackage{pdfpages}
 
 \title{Modelling the Transition to a Low-Carbon Energy Supply}
 \author{Alexander Kell}
@@ -223,6 +224,32 @@ I have undertaken various scenario tests by increasing and decreasing electricit
 
 \section{Remaining Work Plan}
 
+\paragraph{Parameter Tuning}
+
+Tuning of the parameters will be done with respect to a minimisation of the difference between actual and modelled electricity price as well as the electricity mix. The parameters to tune will be: discount rate of generation companies, operation and maintenance costs, availability and capacity factors of power plants, fuel prices and upfront investment costs. I will use the NSGA-II algorithm for multiple-objective optimisation. Specifically I will use the DEAP python package for this \cite{Gagn2012}.
+
+\paragraph{Multi-agent Intelligence}
+
+For multi-agent intelligence I will use the ray RLlib library which has been built for distributed reinforcement learning \cite{Liang2014}. I will try various reinforcement algorithms to compare speed, bidding and investment strategies and final total reward. The reinforcement algorithms I will try are: Advantage Actor-Critic \cite{Mnih2016}, Deep Deterministic Policy Gradients, Deep Q Networks \cite{Mnih2013} and Proximal Policy Optimization \cite{Schulman2017}. The reward will be money made over the long-term.
+
+\paragraph{Carbon-tax Optimiser}
+
+Similarly to multi-agent intelligence, I will try a variety of different reinforcement learning techniques to optimise carbon tax. However, with a combined reward function of cost of electricity and total carbon emitted.
+
+\paragraph{Collusion}
+
+For collusion I will enable parameter sharing between a group of agents, whilst the remaining agents do not have this ability. A comparison will be made for the scenarios where scenario sharing is enabled and that which it isn't. Through the comparison of cost of electricity and energy mix we can compare whether collusion is desirable, or if not, the effects of it.
+
+\paragraph{Optimisation and Agent-Based Model Comparison}
+
+For the comparison of optimisation versus agent-based models, I will use the open source optimisation model OSeMOSYS and ElecSim. The models shall be initialised using the same data, to be as close as possible to one another. I shall then run the model and compare outputs between the models and against reality.
+
+
+
+
+
+
+\includepdf[landscape=true]{gantt.pdf}
 
 
 
