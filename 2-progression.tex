@@ -36,16 +36,16 @@
 %\subsection{Background and research question}
 
 
-Due to the threat of climate change, a transition from a fossil-fuel based system to one based on zero-carbon is required. However, this is not as simple as shutting down all fossil-fuel based power plants and replacing them with renewable energy; careful decisions need to be made to reduce economic impact and lapses in electricity supply. Decision makers therefore need a way of assessing the consequences of decisions in different possible scenarios. 
+Due to the threat of climate change, a transition from a fossil-fuel based system to one based on zero-carbon is required. However, this is not as simple as shutting down all fossil-fuel based power plants and replacing them with renewable energy; careful decisions need to be made to reduce economic impact and lapses in electricity supply. Decision makers, therefore, need a way of assessing the consequences of decisions in different possible scenarios. 
 
-Due to a deliberate move away from centralised planning, and to the liberalisation of electricity markets in many western democracies, heterogenous actors with bounded rationality and imperfect information should be focused on to increase understanding \cite{Kraan2018}.
+Due to a deliberate move away from centralised planning, and to the liberalisation of electricity markets in many western democracies, heterogenous actors with bounded rationality and imperfect information should be focused on to increase understanding \cite{Kraan2018}. Traditional optimisation models use a typical cost-optimal allocation, for a range of climate objectives. However, historically, this is not necessarily how emission reductions occur, due to various factors such as the inertia of different sectors within the energy system, governance and national political priorities  \cite{PyeS.PriceJ.CroninJ.ButnarI.andWelsby2019}.
 
-I propose a method of modelling these heterogenous actors in electricity markets and explore potential pathways to transition to a low-carbon economy. For this goal, I have created a new open-source agent-based model named ElecSim. ElecSim is a stochastic electricity market simulation tool which enables practitioners to alter scenarios and assess the outcomes of possible interventions in an electricity market.
+I propose a method of modelling these heterogenous actors in electricity markets and explore potential pathways to transition to a low-carbon economy. For this goal, I have created a new open-source agent-based model named ElecSim. ElecSim is a stochastic electricity market simulation tool which enables practitioners to alter scenarios and assess the outcomes of possible interventions in an electricity market, enabling one to observe the decision of individual companies as opposed to a centralised planner.
 
 I propose the use of artificial intelligence and optimisation techniques to gain a more realistic representation of an electricity market, and better aid policy makers and electricity market players. Specifically, this will involve the use of reinforcement learning techniques such as Deep Deterministic Policy Gradients (DDPGs)\cite{Hunt2016}, or Deep Q Networks \cite{Mnih2013}. These algorithms will be used to learn optimal bidding and investment strategies.
 
 
-\subsection{Literature Review}
+\paragraph{Literature Review}
 
 Live experimentation of an electricity market is not practical. The time scales are long and there is a significant risk that changes can have detrimental impacts. This can often lead to minor tweaks being made \cite{Forshaw2016}. A solution to this is simulation, where simulation is the substitution of a physical process with a computer model.
 
@@ -86,42 +86,42 @@ A number of dedicated tools have been created for this regard, however by referr
 
 
 
-\subsection{Background and Research Question}
+%\subsection{Background and Research Question}
 
 
 
+%
+%\begin{itemize}
+%  \item Introduction to problem of climate change and requirement for decarbonization.
+%  \item Requirement of shift in heating, transport, and industry to electricity.
+%  \item Inability to use traditional machine learning and statistical tools to project into future due to rapid disruption.
+%  \item Use of long-term agent-based model to simulate into the future (eg. 2050) allowing policy makers and energy market players to assess effect of decisions made.
+%  \item Agent-based models can be used to model the impact of heterogenous investors
+%  \item Enable policy makers to assess the impact of market power and collusion
+%  \item Ability to use reinforcement learning to give agents intelligence
+%\end{itemize}
+%
+%\subsection{Literature Review}
+%
+%\begin{itemize}
+%  \item  Literature review on state-of-the-art models and applications
+%  \item Agent-based model tools
+%  \begin{enumerate}
+%  	\item Absence of open-source tool with stochasticity (table).
+%  \end{enumerate}
+%
+%  \item Optimisation tools
+%\end{itemize}
 
-\begin{itemize}
-  \item Introduction to problem of climate change and requirement for decarbonization.
-  \item Requirement of shift in heating, transport, and industry to electricity.
-  \item Inability to use traditional machine learning and statistical tools to project into future due to rapid disruption.
-  \item Use of long-term agent-based model to simulate into the future (eg. 2050) allowing policy makers and energy market players to assess effect of decisions made.
-  \item Agent-based models can be used to model the impact of heterogenous investors
-  \item Enable policy makers to assess the impact of market power and collusion
-  \item Ability to use reinforcement learning to give agents intelligence
-\end{itemize}
 
-\subsection{Literature Review}
-
-\begin{itemize}
-  \item  Literature review on state-of-the-art models and applications
-  \item Agent-based model tools
-  \begin{enumerate}
-  	\item Absence of open-source tool with stochasticity (table).
-  \end{enumerate}
-
-  \item Optimisation tools
-\end{itemize}
-
-
-\subsection{Work Completed}
-
-\begin{itemize}
-  \item Short-term load forecasting
-  \item Completion of agent-based model at yearly granularity
-  \item Results of yearly granularity of agent-based model
-  \item Use of Northern Ireland scenario for optimisation of carbon tax using reinforcement learning (preliminary results)
-\end{itemize}
+%\subsection{Work Completed}
+%
+%\begin{itemize}
+%  \item Short-term load forecasting
+%  \item Completion of agent-based model at yearly granularity
+%  \item Results of yearly granularity of agent-based model
+%  \item Use of Northern Ireland scenario for optimisation of carbon tax using reinforcement learning (preliminary results)
+%\end{itemize}
 
 
 
@@ -133,12 +133,32 @@ A number of dedicated tools have been created for this regard, however by referr
 
 \section{Research Outputs}
 
+\paragraph{Segmenting Residential Smart Meter Data for Short-Term Load Forecasting.
+}
 
-\begin{itemize}
-	\item Note-paper at e-Energy '18
-	\item Poster at e-Energy '19
-	\item Paper at 2nd International Workshop on Electricity Market Engineering at e-Energy '19?
-\end{itemize}
+The aforementioned paper was published in the Proceedings of the Ninth International Conference on Future Energy Systems \cite{Kell2018}.
+
+In this work, we compared machine learning techniques at their ability of predicting electricity demand 30 minutes ahead. For this, we utilised smart meter data data obtained from the Irish Social Science Data Archive \cite{cer_2012}.
+
+We used K-means clustering \cite{Forgy65} to cluster similar households, and performed machine learning on the scaled aggregate of these clusters. A variety of different forecasting techniques were evaluated such as Random Forests \cite{TinKamHo}, Long Short-Term Memory Neural Networks \cite{lstm}, Artificial Neural Networks \cite{book:984557} and Support Vector Regression \cite{Drucker1997}. We found that random forests performed best for our scenario.
+
+
+\paragraph{ElecSim: Stochastic Open-Source Agent-Based Model to Inform Policy for Long-Term Electricity Planning.}
+
+We are due to publish the aforementioned paper in the Proceedings of the Tenth International Conference on Future Energy Systems, Electricity Market Engineering Workshop.
+
+In this paper we detail the technical details of ElecSim, our long-term electricity investment agent-based model. We detail scenarios where we reduce electricity demand by 1\% a year. We also vary carbon tax and demonstrate that starting from a low carbon tax of \textsterling26 and increasing linearly to \textsterling150, as predicted by the UK government BEIS \cite{Kell2018}, leads to a lower uptake of renewables by 2050 than maintaining a carbon tax of \textsterling40 throughout.
+
+\paragraph{Modelling Carbon Tax in the UK Electricity Market using an Agent-Based Model.}
+
+We are due to publish a poster in the Proceedings of the Tenth International Conference on Future Energy Systems. 
+
+In this work we provide further scenarios by using the ElecSim model and set carbon tax to equal \textsterling10, \textsterling20, and \textsterling70. We found that a carbon of \textsterling10 was insufficient to cause a significant uptake in renewable energy. However, a carbon tax of \textsterling70 lead to an almost 100\% renewable energy supply by 2050.
+
+
+\paragraph{Internship at Centre for Science and Policy, University of Cambridge}
+
+At this internhip I will be working with policy advisers from across the world, and with academics to increase research impact for policy.
 
 \clearpage
 
@@ -146,45 +166,45 @@ A number of dedicated tools have been created for this regard, however by referr
 
 Whilst the agent-based model, ElecSim, has been designed and parametrised, it has been designed to cater for a temporal granularity of a yearly time-step. That is, decisions for bidding into an electricity market and investing in power plants happens every year. The goal is to increase the granularity temporally, which will enable the modelling of sudden fluctuations in wind speed and solar irradiance. Collins \textit{et al.} showed that a low temporal resolution results in overestimation of intermittent renewable energy technology, and underestimation in dispatchable energy sources \cite{Collins2017}.
 
-To further increase the validation accuracy of ElecSim, I propose the use of optimisation such as mixed integer linear programming and genetic programming to further parametrise the model. I propose the use of the NSGA-II algorithm, which enables multi-objective optimisation, and approximates the pareto frontier \cite{Valkanas2014}. I propose the minimisation of the difference between real and modelled electricity prices and real and modelled energy mix. Where the energy mix is defined as percentage share of different renewable types.
+To further increase the validation accuracy of ElecSim, I propose the use of optimisation such as mixed integer linear programming and genetic programming to further parametrise the model. I propose the use of the NSGA-II algorithm, which enables multi-objective optimisation, and approximates the pareto frontier \cite{Valkanas2014}. I propose the minimisation of the difference between real and modelled electricity prices and real and modelled energy mix. Where the energy mix is defined as percentage share of different energy types.
 
 I propose the use of reinforcement learning techniques to control the behaviour of agents. For instance, controlling and optimising the behaviour of investment decisions and bidding strategies. I would also like to model collusion between agents through the means of parameter sharing between agents. This would enable the comparison between scenarios where collusion is present and those where it is not.
 
-Whilst I have completed preliminary work on optimising the carbon price using reinforcement learning techniques using DDPG, I would like to do improve this when I have designed a higher granularity model which may improve results.
+Whilst I have completed preliminary work on optimising the carbon price using reinforcement learning techniques using DDPG, I would like to do improve this when I have designed a higher granularity model to improve results.
 
 I propose the modelling of further scenarios using this model and change variables such as cost of technologies, change in demand, uncertainty in fuel prices, differing countries, and changing availability and capacity factors.
 
 Finally, I would like to compare my model to another open source model, OSeMOSYS \cite{Howells2011}. OSeMOSYS is an optimisation based model. I believe that a comparison between agent-based models and optimisation model will help to elucidate the strengths and weaknesses of these models in comparison to one another, and discover the scenarios in which the models are better suited. 
 
-\begin{enumerate}
-  \item Increase granularity to hourly.
-  \begin{enumerate}
-  \item Selection of best representative days for long-term - Comparison to literature that selects best day for single year.
-  \end{enumerate}
-  \item  Parametrise model using genetic algorithm or other optimisation tool.
-
-  \item Add intelligence to agents using reinforcement learning for:
-  \begin{enumerate}
-      \item Investment decisions.
-      \item Bidding strategy.
-      \item Impact of collusion (variable sharing between two or more agents).
-  \end{enumerate}
-  \item Complete work on carbon tax optimiser
-  \item Comparison of optimisation and agent-based model in different scenarios.
-  \begin{enumerate}
-  \item Same intialisation parameters and project to future (form of cross-validation).
-  \item Collusion.
-  \end{enumerate}
-  \item Further scenarios and results as examples
-  \begin{enumerate}
-  \item Decreasing costs of technology over time
-  \item Different countries
-  \item Improving availability and capacity factors
-  \item Uncertainty in fuel prices
-  \item Changing demand curve shape due to increase in electric vehicles
-\end{enumerate}
-
-\end{enumerate}
+%\begin{enumerate}
+%  \item Increase granularity to hourly.
+%  \begin{enumerate}
+%  \item Selection of best representative days for long-term - Comparison to literature that selects best day for single year.
+%  \end{enumerate}
+%  \item  Parametrise model using genetic algorithm or other optimisation tool.
+%
+%  \item Add intelligence to agents using reinforcement learning for:
+%  \begin{enumerate}
+%      \item Investment decisions.
+%      \item Bidding strategy.
+%      \item Impact of collusion (variable sharing between two or more agents).
+%  \end{enumerate}
+%  \item Complete work on carbon tax optimiser
+%  \item Comparison of optimisation and agent-based model in different scenarios.
+%  \begin{enumerate}
+%  \item Same intialisation parameters and project to future (form of cross-validation).
+%  \item Collusion.
+%  \end{enumerate}
+%  \item Further scenarios and results as examples
+%  \begin{enumerate}
+%  \item Decreasing costs of technology over time
+%  \item Different countries
+%  \item Improving availability and capacity factors
+%  \item Uncertainty in fuel prices
+%  \item Changing demand curve shape due to increase in electric vehicles
+%\end{enumerate}
+%
+%\end{enumerate}
 
 
 
@@ -201,11 +221,11 @@ A literature review has been undertaken and a greater understanding of energy ma
 
 The fundamental components of the system have been designed. A model of an electricity market with a yearly time-step has been completed with generation company and demand agents, with example scenarios. The model has been calibrated with data from the UK, however designed in such a way that other countries can be used. For instance, by providing an optimisation framework in which individual cost parameters can be estimated from a simple average cost of electricity.
 
-I am currently testing the design of a 30 minute time step. Representative days of weather and load have been selected to reduce overall computation time by testing different techniques such as k-means clustering, genetic programming and Fourier resampling. 
+I am currently testing the design of a 30 minute time step. Representative days of weather and load have been selected to reduce overall computation time by testing different techniques such as k-means clustering \cite{Forgy65}, genetic programming, such as the NSGA-II \cite{Valkanas2014} and Fourier resampling \cite{Cooley2006}. 
 
 The model has been validated through the comparison of actual electricity prices with modelled electricity prices. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa.
 
-I have researched the use of reinforcement learning to optimise carbon tax to reduce electricity price and carbon emissions. However, this has not provided the expected results of a rapid increase in reward. I am increasing the temporal granularity to aid in this, and further investigation is required.
+I have begun working on the use of reinforcement learning to optimise the setting of carbon tax to reduce electricity price and carbon emissions. I am increasing the temporal granularity to aid in getting better results.
 
 I am yet to implement agent intelligence through the use of reinforcement learning for bidding and investment strategies. However, I have identified the necessary algorithms for this.
 
@@ -226,11 +246,11 @@ I have undertaken various scenario tests by increasing and decreasing electricit
 
 \paragraph{Parameter Tuning}
 
-Tuning of the parameters will be done with respect to a minimisation of the difference between actual and modelled electricity price as well as the electricity mix. The parameters to tune will be: discount rate of generation companies, operation and maintenance costs, availability and capacity factors of power plants, fuel prices and upfront investment costs. I will use the NSGA-II algorithm for multiple-objective optimisation. Specifically I will use the DEAP python package for this \cite{Gagn2012}.
+Tuning of the parameters will be done with respect to a minimisation of the difference between actual and modelled electricity price as well as difference between actual and modelled electricity mix. The parameters to tune will be: discount rate of generation companies, operation and maintenance costs, availability and capacity factors of power plants, fuel prices and upfront investment costs. I will use the NSGA-II algorithm for multi-objective optimisation \cite{Valkanas2014}. Specifically I will use the DEAP python package for this \cite{Gagn2012}.
 
 \paragraph{Multi-agent Intelligence}
 
-For multi-agent intelligence I will use the ray RLlib library which has been built for distributed reinforcement learning \cite{Liang2014}. I will try various reinforcement algorithms to compare speed, bidding and investment strategies and final total reward. The reinforcement algorithms I will try are: Advantage Actor-Critic \cite{Mnih2016}, Deep Deterministic Policy Gradients, Deep Q Networks \cite{Mnih2013} and Proximal Policy Optimization \cite{Schulman2017}. The reward will be money made over the long-term.
+For multi-agent intelligence I will use the ray RLlib library which has been built for distributed reinforcement learning \cite{Liang2014}. I will try various reinforcement algorithms to compare speed, bidding and investment strategies and final total reward. The reinforcement algorithms I will try are: Advantage Actor-Critic \cite{Mnih2016}, Deep Deterministic Policy Gradients, Deep Q Networks \cite{Mnih2013} and Proximal Policy Optimization \cite{Schulman2017}, in addition to others. The reward will be profit of the respective companies.
 
 \paragraph{Carbon-tax Optimiser}
 
@@ -302,6 +322,6 @@ For the comparison of optimisation versus agent-based models, I will use the ope
 
 \clearpage
 
-\bibliography{library}
+\bibliography{library,custom}
 \bibliographystyle{ieeetr}
 \end{document}
