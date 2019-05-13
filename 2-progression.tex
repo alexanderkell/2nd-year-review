@@ -139,7 +139,7 @@ A number of dedicated tools have been created for this regard, however by referr
 
 \section{Research Outputs}
 
-\paragraph{A. Kell, A. S. Mcgough, and M. Forshaw, ``Segmenting Residential Smart Meter Data for Short-Term Load Forecasting.'' e-Energy Conf., pp. 91--96, 2018. \cite{Kell2018}
+\textbf{A. Kell, A. S. Mcgough, and M. Forshaw, ``Segmenting Residential Smart Meter Data for Short-Term Load Forecasting.'' e-Energy Conf., pp. 91--96, 2018. \cite{Kell2018}
 }
 In this work, we compared machine learning techniques at their ability to predict electricity demand 30 minutes ahead. For this, we utilised smart meter data data obtained from the Irish Social Science Data Archive \cite{cer_2012}. We used K-means \cite{Forgy65} to cluster similar households, and predicted the scaled aggregate of these clusters. Different forecasting techniques were evaluated such as Random Forests \cite{TinKamHo}, Long Short-Term Memory Neural Networks \cite{lstm}, Artificial Neural Networks \cite{book:984557} and Support Vector Regression \cite{Drucker1997}. We found that random forests performed best for our scenario.
 
@@ -215,13 +215,15 @@ Finally, I would like to compare my model to another open source model, OSeMOSYS
 
 A literature review has been undertaken and a greater understanding of energy market models has been developed. With a distinction between top-down macroeconomic models and bottom-up techno-economic models shown. Also the differences between traditional centralised optimisation models and new simulation techniques developed. I have developed a table which positions my research in relation to the literature. I will further the review to explore the nuances in the binary responses given in the columns "Country Generalisability".
 
-\paragraph{Design of System and Validation}
-
+{\parindent0pt
+\vspace{2mm}
+\textbf{Design of System and Validation}
+}
 The fundamental components of the system have been designed. A model of an electricity market with a yearly time-step has been completed with generation company and demand agents, and example scenarios. The model has been calibrated with data from the UK, however designed in such a way that other countries can be used. For instance, by providing an optimisation framework in which individual cost parameters can be estimated from a simple average cost of electricity.
 
 I am currently testing the design of a 30 minute time step. Representative days of weather and load have been selected to reduce overall computation time by testing different techniques such as k-means clustering \cite{Forgy65}, genetic programming, such as the NSGA-II \cite{Valkanas2014} and Fourier resampling \cite{Cooley2006}. 
 
-The model has been validated through the comparison of actual electricity prices with modelled electricity prices, with a normalised root mean square error of \textsterling4.41/MWh. Improving on the non-stochastic case by 52.5\%. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa. However, further work is to be done, namely in increasing temporal granularity to limit the uptake of intermittent renewable energy without battery technology.
+The model has been validated by the comparison of actual electricity prices with modelled electricity prices, with a normalised root mean square error of \textsterling4.41/MWh. Improving on the non-stochastic case by 52.5\%. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa. 
 
 I have implemented reinforcement learning to optimise the setting of carbon tax to reduce electricity price and carbon emissions. I am increasing the temporal granularity to aid in getting better results.
 
