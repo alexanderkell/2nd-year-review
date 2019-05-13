@@ -19,8 +19,13 @@
 \usepackage{siunitx}
 \usepackage{array}
 \usepackage{pdfpages}
+\usepackage{pdflscape}
 
-\title{Modelling the Transition to a Low-Carbon Energy Supply}
+
+
+
+
+\title{Modelling the Transition to a Low-Carbon Electricity Supply}
 \author{Alexander Kell \\ {A.Kell2@newcastle.ac.uk}}
 
 \date{\today}
@@ -134,32 +139,30 @@ A number of dedicated tools have been created for this regard, however by referr
 
 \section{Research Outputs}
 
-\paragraph{ A. Kell, A. S. Mcgough, and M. Forshaw, “Segmenting Residential Smart Meter Data for Short-Term Load Forecasting,” e-Energy Conf., pp. 91--96, 2018. \cite{Kell2018}
+\paragraph{A. Kell, A. S. Mcgough, and M. Forshaw, “Segmenting Residential Smart Meter Data for Short-Term Load Forecasting,” e-Energy Conf., pp. 91--96, 2018. \cite{Kell2018}
 }
 
 
-In this work, we compared machine learning techniques at their ability of predicting electricity demand 30 minutes ahead. For this, we utilised smart meter data data obtained from the Irish Social Science Data Archive \cite{cer_2012}.
+In this work, we compared machine learning techniques for their ability of predicting electricity demand 30 minutes ahead. For this, we utilised smart meter data data obtained from the Irish Social Science Data Archive \cite{cer_2012}.
 
-We used K-means clustering \cite{Forgy65} to cluster similar households, and performed machine learning on the scaled aggregate of these clusters. A variety of different forecasting techniques were evaluated such as Random Forests \cite{TinKamHo}, Long Short-Term Memory Neural Networks \cite{lstm}, Artificial Neural Networks \cite{book:984557} and Support Vector Regression \cite{Drucker1997}. We found that random forests performed best for our scenario.
+We used K-means clustering \cite{Forgy65} to cluster similar households, and predicted the scaled aggregate of these clusters. A variety of different forecasting techniques were evaluated such as Random Forests \cite{TinKamHo}, Long Short-Term Memory Neural Networks \cite{lstm}, Artificial Neural Networks \cite{book:984557} and Support Vector Regression \cite{Drucker1997}. We found that random forests performed best for our scenario.
 
 
-\paragraph{A. Kell, A. S. McGough, and M. Forshaw, “ElecSim: Stochastic Open-Source Agent-Based Model to Inform Policy for Long-Term Electricity Planning.” e-Energy Conf., 2019.
+\paragraph{A. Kell, M. Forshaw, and A. S. McGough, “ElecSim: Stochastic Open-Source Agent-Based Model to Inform Policy for Long-Term Electricity Planning.” e-Energy Conf., 2019.
 }
 
 We have had the aforementioned paper accepted to be published in the e-Energy '19 Electricity Market Engineering Workshop.
 
-In this paper we detail the technical details of ElecSim, our long-term electricity investment agent-based model. We detail scenarios where we reduce electricity demand by 1\% a year. We also vary carbon tax and demonstrate that starting from a low carbon tax of \textsterling26 and increasing linearly to \textsterling150, as predicted by the UK government BEIS \cite{Kell2018}, leads to a lower uptake of renewables by 2050 than maintaining a carbon tax of \textsterling40 throughout.
+In this paper we detail the technical details of ElecSim. We detail scenarios where we reduce electricity demand by 1\% a year. We also vary carbon tax and demonstrate that starting from a low value of \textsterling26 and increasing linearly to \textsterling150, as predicted by the UK government BEIS \cite{Department2016}, leads to a lower uptake of renewables by 2050 than maintaining a carbon tax of \textsterling40 throughout.
 
-\paragraph{A. Kell, and M. Forshaw, A. S. McGough, “Modelling Carbon Tax in the UK Electricity Market using an Agent-Based Model” e-Energy Conf., 2019.}
+\paragraph{A. Kell, M. Forshaw, and A. S. McGough, “Modelling Carbon Tax in the UK Electricity Market using an Agent-Based Model” e-Energy Conf., 2019.}
 
-We have had the aforementioned paper accepted to be published as a poster.
-
-In this work we provide further scenarios by using the ElecSim model and set carbon tax to equal \textsterling10, \textsterling20, and \textsterling70. We found that a carbon of \textsterling10 was insufficient to cause a significant uptake in renewable energy. However, a carbon tax of \textsterling70 lead to an almost 100\% renewable energy supply by 2050.
+We have had the aforementioned paper accepted to be published as a poster. In this work we provide further scenarios by using the ElecSim model and set carbon tax to equal \textsterling10, \textsterling20, and \textsterling70. We found that a carbon of \textsterling10 was insufficient to cause a significant uptake in renewable energy. However, a carbon tax of \textsterling70 lead to an almost 100\% renewable energy supply by 2050.
 
 
 \paragraph{Internship at Centre for Science and Policy, University of Cambridge}
 
-At this internship I will be working with policy advisers from across the world, and with academics to increase research impact for policy.
+At this internship I will be working with policy advisers from across the world, and with academics to increase research impact for policy. This will give me an insight into governmental policy, and will help to form the policy issues most related to my PhD, and how to present this to policy makers.
 
 \clearpage
 
@@ -216,17 +219,17 @@ Finally, I would like to compare my model to another open source model, OSeMOSYS
 
 \paragraph{Review}
 
-A literature review has been undertaken and a greater understanding of energy market models has been developed. With a distinction between top-down macroeconomic models and bottom-up techno-economic models shown. Also the differences between traditional centralised optimisation  models and new simulation techniques developed. I have developed a table which positions my research in relation to the literature.
+A literature review has been undertaken and a greater understanding of energy market models has been developed. With a distinction between top-down macroeconomic models and bottom-up techno-economic models shown. Also the differences between traditional centralised optimisation models and new simulation techniques developed. I have developed a table which positions my research in relation to the literature. I will further the review to explore the nuances in the binary responses given in the columns "Country Generalisability".
 
 \paragraph{Design of System and Validation}
 
-The fundamental components of the system have been designed. A model of an electricity market with a yearly time-step has been completed with generation company and demand agents, with example scenarios. The model has been calibrated with data from the UK, however designed in such a way that other countries can be used. For instance, by providing an optimisation framework in which individual cost parameters can be estimated from a simple average cost of electricity.
+The fundamental components of the system have been designed. A model of an electricity market with a yearly time-step has been completed with generation company and demand agents, and example scenarios. The model has been calibrated with data from the UK, however designed in such a way that other countries can be used. For instance, by providing an optimisation framework in which individual cost parameters can be estimated from a simple average cost of electricity.
 
 I am currently testing the design of a 30 minute time step. Representative days of weather and load have been selected to reduce overall computation time by testing different techniques such as k-means clustering \cite{Forgy65}, genetic programming, such as the NSGA-II \cite{Valkanas2014} and Fourier resampling \cite{Cooley2006}. 
 
-The model has been validated through the comparison of actual electricity prices with modelled electricity prices. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa.
+The model has been validated through the comparison of actual electricity prices with modelled electricity prices, with a normalised root mean square error of \textsterling4.41/MWh. Improving on the non-stochastic case by 52.5\%. The model has also been validated through the means of observation of a process. Specifically, an increase in carbon tax leads to a proportionally higher uptake in low-carbon technology and vice-versa. However, further work is to be done, namely in increasing temporal granularity to limit the uptake of intermittent renewable energy without battery technology.
 
-I have begun working on the use of reinforcement learning to optimise the setting of carbon tax to reduce electricity price and carbon emissions. I am increasing the temporal granularity to aid in getting better results.
+I have implemented reinforcement learning to optimise the setting of carbon tax to reduce electricity price and carbon emissions. I am increasing the temporal granularity to aid in getting better results.
 
 I am yet to implement agent intelligence through the use of reinforcement learning for bidding and investment strategies. However, I have identified the necessary algorithms for this.
 
@@ -268,9 +271,8 @@ For the comparison of optimisation versus agent-based models, I will use the ope
 
 
 
-
-
 \includepdf[landscape=true]{gantt.pdf}
+
 
 
 
